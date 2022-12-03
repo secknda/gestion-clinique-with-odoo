@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <odoo>
+ 	<data>
+
+ 		<record id="gestion_clinique_patient_view_tree" model="ir.ui.view">
+ 			<field name="name">gestion_clinique_patient_view_tree</field>
+			<field name="model">gestion.clinique.patient</field>
+			<field name="arch" type="xml">
+			    <tree string="Patient">
+				  <field name="number_dossier"/>
+			      <field name="name"/>
+			      <field name="fist_name" />
+			      <field name="sexe" />
+			      <field name="date_admis" />
+				  
+			    </tree>
+			</field>
+ 		</record>
+
+ 		<record id="gestion_clinique_patient_view_form" model="ir.ui.view">
+ 			<field name="name">gestion_clinique_patient_view_form</field>
+ 			<field name="model">gestion.clinique.patient</field>
+ 			<field name="arch" type="xml">
+			    <form string="Patient">
+					<header>
+						<button id="button_new" name="action_new" string="Nouveau" 
+						type="object" groups="base.group_system" states="rejected"/>
+						<button id="button_transfered" name="action_transfered" string="Transfere" 
+						type="object" groups="base.group_system" states="new"/>
+						<button id="button_consulted" name="action_consulted" 
+						string="Consulte"  type="object" groups="base.group_system" states="transfered"/>
+						<button id="button_rejected" name="action_rejected" string="Libere" 
+						type="object" groups="base.group_system" states="consulted"/>
+						<button id="button_hospitalise" name="action_hospitalise" string="Hospitalise" 
+						type="object" groups="base.group_system" states="consulted"/>
+						<field name='state' widget='statusbar' statusbar_visible="new,transfered,consulted"/>
+					</header>
+					<div class="pt_title">
+						<h1>
+							<field name="number_dossier" readonly="1"/>
+						</h1>
+					</div>
+			    	<group>
+			    		<group>
+			    			<field name="name" />
+			      			<field name="fist_name" />
+			      			<field name="sexe" />
+			      			<field name="date_naissance" />
+			      			<field name="lieu_naissance" />
+			    		</group>
+			    		<group>
+			    			<field name="assurance" />
+							<field name="organisation" />
+							<field name="assureur" />
+							<field name="pourcentage" />
+							<field name="prix_ticket"/>
+			      			<field name="date_admis" />
+			      			<field name="phone" />
+			      			<field name="email" />
+							<field name="medecin_id"/>
+			    		</group>
+			    	</group>
+			    </form>
+			</field>
+ 		</record>
+
+ 		<record model="ir.actions.act_window" id="action_gestion_clinique_patient">
+ 			<field name="name">Patient</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">gestion.clinique.patient</field>
+		    <field name="view_mode">tree,form</field>	
+ 		</record>
+
+
+ 	</data>
+ </odoo>

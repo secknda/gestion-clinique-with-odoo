@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="0">
+            <record id="gestion_clinique_module_category" model="ir.module.category">
+                    <field name="name">Gestion Clinique</field>
+                    <field name="sequence">4</field>
+            </record>
+
+            <record id="gestion_clinique_assistant" model="res.groups">
+                <field name="name">Groupe Assistant</field>
+                <field name="users" eval="[(4, ref('base.user_root'))]"/>
+                <field name="category_id" ref="gestion_clinique_module_category"/>
+            </record>
+
+            <record id="gestion_clinique_medecin" model="res.groups">
+                <field name="name">Groupe Medecin</field>
+                <field name="users" eval="[(4, ref('base.user_root'))]"/>
+                <field name="category_id" ref="gestion_clinique_module_category"/>
+            </record>
+
+
+</odoo>

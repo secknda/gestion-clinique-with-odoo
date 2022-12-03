@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+    <!-- Menu principal -->   
+        <menuitem name="Gestion Clinique" id="gestion_clinique_menu"
+            sequence="2" />
+            <menuitem name="Configuration" id="gestion_clinique_conf"
+               sequence="1" parent="gestion_clinique_menu" />
+             <menuitem name="Patient" id="gestion_clinique_patient"
+               sequence="1" parent="gestion_clinique_conf" 
+               action="action_gestion_clinique_patient"/>
+             <menuitem name="Docteur" id="gestion_clinique_doc"
+               sequence="2" parent="gestion_clinique_conf" 
+               action="action_gestion_clinique_docteur"/>
+
+            <menuitem name="Parametrage" id="gestion_clinique_param"
+               sequence="2" parent="gestion_clinique_menu" />
+             <menuitem name="Domaine" id="gestion_clinique_domaine"
+               sequence="1" parent="gestion_clinique_param" 
+               action="action_gestion_clinique_domaine"/>
+             <menuitem name="Grade" id="gestion_clinique_grade"
+               sequence="2" parent="gestion_clinique_param" 
+               action="action_gestion_clinique_grade"/>
+             <menuitem name="Diplome" id="gestion_clinique_diplome"
+               sequence="3" parent="gestion_clinique_param" 
+               action="action_gestion_clinique_diplome"/>
+    </data>
+</odoo>

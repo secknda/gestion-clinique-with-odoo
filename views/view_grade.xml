@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <odoo>
+ 	<data>
+
+ 		<record id="gestion_clinique_grade_view_tree" model="ir.ui.view">
+ 			<field name="name">gestion_clinique_grade_view_tree</field>
+			<field name="model">gestion.clinique.grade</field>
+			<field name="arch" type="xml">
+			    <tree string="Grade">
+			      <field name="name" />
+			      <field name="code" />
+			    </tree>
+			</field>
+ 		</record>
+
+ 		<record id="gestion_clinique_grade_view_form" model="ir.ui.view">
+ 			<field name="name">gestion_clinique_grade_view_form</field>
+ 			<field name="model">gestion.clinique.grade</field>
+ 			<field name="arch" type="xml">
+			    <form string="Grade">
+			    	<group>
+			    		<field name="name" />
+					    <field name="code" />
+			    	</group>
+			    </form>
+			</field>
+ 		</record>
+
+ 		<record model="ir.actions.act_window" id="action_gestion_clinique_grade">
+ 			<field name="name">grade</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">gestion.clinique.grade</field>
+		    <field name="view_mode">tree,form</field>	
+ 		</record>
+
+
+ 	</data>
+ </odoo>

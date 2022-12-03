@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data noupdate="1">
+        <record id="seq_gestion_clinique_patient" model="ir.sequence">
+			<field name="name">Numéro de Dossier Patient</field>
+			<field name="code">gestion.clinique.patient</field>
+			<field name="prefix">N° Dossier</field>
+			<field name="padding">6</field>
+        </record> 
+
+
+    </data>
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <odoo>
+ 	<data>
+
+ 		<record id="gestion_clinique_docteur_view_tree" model="ir.ui.view">
+ 			<field name="name">gestion_clinique_docteur_view_tree</field>
+			<field name="model">gestion.clinique.docteur</field>
+			<field name="arch" type="xml">
+			    <tree string="Docteur">
+			      <field name="name" />
+			      <field name="age" />
+			      <field name="domaine_id" />
+			      <field name="grade_id" />
+			    </tree>
+			</field>
+ 		</record>
+
+ 		<record id="gestion_clinique_docteur_view_form" model="ir.ui.view">
+ 			<field name="name">gestion_clinique_docteur_view_form</field>
+ 			<field name="model">gestion.clinique.docteur</field>
+ 			<field name="arch" type="xml">
+			    <form string="Docteur">
+			    	<group>
+			    		<field name="name" />
+					    <field name="age" />
+					    <field name="sexe" />
+					    <field name="situation_matrimoniale" />
+					    <field name="domaine_id" />
+					    <field name="grade_id" />
+						<field name="nbr_patient"/>
+			    	</group>
+					<notebook>
+						<page string="Liste des Patients">
+							<field name="patient_ids"/>
+						</page>
+						<page string="Liste des Diplomes">
+							<field name="diplomes_ids"/>
+						</page>
+					</notebook>
+			    </form>
+			</field>
+ 		</record>
+
+ 		<record model="ir.actions.act_window" id="action_gestion_clinique_docteur">
+ 			<field name="name">Docteur</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">gestion.clinique.docteur</field>
+		    <field name="view_mode">tree,form</field>	
+ 		</record>
+
+
+ 	</data>
+ </odoo>
